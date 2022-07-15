@@ -11,7 +11,8 @@ namespace FigureArea.Calculator.Figures
             get
             {
                 double area = 0.25 * NumberOfSides * Math.Pow(SideA, 2) * Math.Tan(NumberOfSides / Math.PI); //Pentagon Area
-                return Math.Round(area, 2);
+                area = Math.Round(area, 2);
+                return area > 0 ? area : 0;
             }
         }
     }

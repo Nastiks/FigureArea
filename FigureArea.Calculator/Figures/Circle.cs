@@ -9,7 +9,7 @@ namespace FigureArea.Calculator.Figures
         {
             get 
             {
-                double area = Math.PI * Math.Pow(Radius, 2);
+                double area = Math.PI * Math.Pow(Radius, 2);                
                 return Math.Round(area, 2);
             }
         }

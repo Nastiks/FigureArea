@@ -43,6 +43,7 @@ namespace FigureArea.ConsoleClient
             string output = "Введите радиус круга: ";
             Console.Write(output);
             circle.Radius = CheckTheInput(circle.Radius, output);
+            
             Console.WriteLine($"Площадь круга = {circle.Area}");
         }
         static void TriangleProcessing()
@@ -114,6 +115,15 @@ namespace FigureArea.ConsoleClient
             string output2 = "Введите длину одной стороны: ";
             Console.Write(output2);
             polygon.SideA = CheckTheInput(polygon.SideA, output2);
+
+            if (polygon.Area == 0)
+            {
+                Console.WriteLine("Правильного многоугольника с такими сторонами не существует.");
+            }
+            else
+            {
+                Console.WriteLine($"Площадь правильного многоугольника = {polygon.Area}");
+            }
             Console.WriteLine($"Площадь правильного многоугольника = {polygon.Area}");
         }
         static double[] ListingOfParties()
@@ -145,7 +155,7 @@ namespace FigureArea.ConsoleClient
             while (result != true)
             {
                 if (!double.TryParse(Console.ReadLine(), out input) || input <= 0)
-                {
+                {                    
                     Console.WriteLine("Ошибка ввода! Введите корректные данные.\nЕсли используете точку, замените её на запятую.");
                     Console.WriteLine(output);
                 }
