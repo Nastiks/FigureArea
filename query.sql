@@ -1,0 +1,1 @@
+SELECT [ProductName], [CategoryName] FROM [Goods];
